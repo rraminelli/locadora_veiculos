@@ -4,27 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9e57e0f8-3b35-4b81-82ae-279c7dc31ab2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/letscode/bancobrasil/locadora/main/Aplicacao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/letscode/bancobrasil/locadora/main/TesteCast.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/letscode/bancobrasil/locadora/model/Carro.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/letscode/bancobrasil/locadora/model/CartaoCredito.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/letscode/bancobrasil/locadora/model/Cliente.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/letscode/bancobrasil/locadora/model/Endereco.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/letscode/bancobrasil/locadora/model/Locacao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/letscode/bancobrasil/locadora/model/Locadora.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/letscode/bancobrasil/locadora/model/Moto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/letscode/bancobrasil/locadora/model/Onibus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/letscode/bancobrasil/locadora/model/Pessoa.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/letscode/bancobrasil/locadora/model/PessoaFisica.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/letscode/bancobrasil/locadora/model/PessoaJuridica.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/letscode/bancobrasil/locadora/model/Veiculo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/letscode/bancobrasil/locadora/service/LocacaoService.java" afterDir="false" />
+    <list default="true" id="9e57e0f8-3b35-4b81-82ae-279c7dc31ab2" name="Changes" comment="primeiro commit - Locadora de Veiculos">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,8 +91,16 @@
       <workItem from="1654721048256" duration="2921000" />
       <workItem from="1654883686861" duration="5889000" />
       <workItem from="1654889699883" duration="599000" />
-      <workItem from="1654890337533" duration="3721000" />
+      <workItem from="1654890337533" duration="4650000" />
     </task>
+    <task id="LOCAL-00001" summary="primeiro commit - Locadora de Veiculos">
+      <created>1654894510094</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1654894510095</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -128,6 +117,10 @@
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="primeiro commit - Locadora de Veiculos" />
+    <option name="LAST_COMMIT_MESSAGE" value="primeiro commit - Locadora de Veiculos" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
@@ -135,6 +128,21 @@
           <url>file://$PROJECT_DIR$/src/main/java/br/letscode/bancobrasil/locadora/main/TesteCast.java</url>
           <line>8</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/br/letscode/bancobrasil/locadora/service/LocacaoService.java</url>
+          <line>20</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/br/letscode/bancobrasil/locadora/service/LocacaoService.java</url>
+          <line>15</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/br/letscode/bancobrasil/locadora/main/Aplicacao.java</url>
+          <line>32</line>
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
