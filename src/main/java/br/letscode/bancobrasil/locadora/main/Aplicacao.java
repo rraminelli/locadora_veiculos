@@ -7,9 +7,13 @@ import br.letscode.bancobrasil.locadora.model.*;
 import br.letscode.bancobrasil.locadora.service.LocacaoService;
 import br.letscode.bancobrasil.locadora.service.VeiculoService;
 
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.sql.Connection;
 import java.util.Collections;
 import java.util.List;
+import java.util.Properties;
 
 public class Aplicacao {
 
@@ -75,13 +79,44 @@ public class Aplicacao {
     }
 
     static String getOrigemDados(final String[] args) {
-        if (args.length == 0 || args[0].isBlank()) {
+
+        String origemDados;
+
+        if (args.length != 0 && !args[0].isBlank()) {
+          origemDados = args[0];
+        } else {
+            final Properties prop = new Properties();
+            final String filePath = Aplicacao.class.getClassLoader().getResource("config.properties").getPath();
+
+            try (InputStream stream = new FileInputStream(filePath)) {
+                prop.load(stream);
+            } catch (IOException e) {
+                throw new OrigemDadosVeiculoException("Arquivo props nao encontrado.");
+            }
+
+            /*InputStream stream = null;
+            try {
+                stream = new FileInputStream(filePath);
+                prop.load(stream);
+            } catch (IOException e) {
+                throw new OrigemDadosVeiculoException("Arquivo props nao encontrado.");
+            } finally {
+                try {
+                    stream.close();
+                } catch (IOException e) {
+                    throw new OrigemDadosVeiculoException("Falha ao fechar arquivo.");
+                }
+            }*/
+
+            origemDados = prop.getProperty("origemDadosVeiculos");
+        }
+
+        if (origemDados.isBlank()) {
             throw new OrigemDadosVeiculoException("Origem de dados é obrigataria!");
         }
 
-        final String origemDados = args[0];
-
         return origemDados;
+
     }
 
 }
