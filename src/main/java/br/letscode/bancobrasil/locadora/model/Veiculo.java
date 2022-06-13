@@ -1,8 +1,10 @@
 package br.letscode.bancobrasil.locadora.model;
 
+import br.letscode.bancobrasil.locadora.service.VeiculoService;
+
 import java.math.BigDecimal;
 
-public class Veiculo {
+public abstract class Veiculo implements Comparable {
 
     private String cor;
     private String placa;
@@ -67,4 +69,11 @@ public class Veiculo {
     public void setQtdePassageiros(int qtdePassageiros) {
         this.qtdePassageiros = qtdePassageiros;
     }
+
+    @Override
+    public int compareTo(Object veiculoObj) {
+        final Veiculo veiculo = (Veiculo) veiculoObj;
+        return veiculo.getPrecoLocacao().compareTo(this.getPrecoLocacao());
+    }
+
 }

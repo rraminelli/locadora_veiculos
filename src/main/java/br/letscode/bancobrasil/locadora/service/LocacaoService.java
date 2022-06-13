@@ -1,5 +1,6 @@
 package br.letscode.bancobrasil.locadora.service;
 
+import br.letscode.bancobrasil.locadora.exceptions.ClienteNaoInformadoException;
 import br.letscode.bancobrasil.locadora.model.CartaoCredito;
 import br.letscode.bancobrasil.locadora.model.Cliente;
 import br.letscode.bancobrasil.locadora.model.Locacao;
@@ -34,9 +35,9 @@ public class LocacaoService {
         return this;
     }
 
-    public LocacaoService addCartaoCredito(CartaoCredito cartaoCredito) {
+    public LocacaoService addCartaoCredito(CartaoCredito cartaoCredito) throws ClienteNaoInformadoException {
         if (locacao.getCliente() == null) {
-            throw new IllegalArgumentException("Cliente nao adicionado!!!");
+            throw new ClienteNaoInformadoException("Cliente nao adicionado!!!");
         }
         if (locacao.getCliente().getCartaoCreditos() == null) {
             locacao.getCliente().setCartaoCreditos(new HashSet<>());

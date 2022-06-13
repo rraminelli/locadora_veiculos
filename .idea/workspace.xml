@@ -5,7 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9e57e0f8-3b35-4b81-82ae-279c7dc31ab2" name="Changes" comment="primeiro commit - Locadora de Veiculos">
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/letscode/bancobrasil/locadora/exceptions/ClienteNaoInformadoException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/letscode/bancobrasil/locadora/exceptions/OrigemDadosVeiculoException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/letscode/bancobrasil/locadora/factory/VeiculoServiceFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/letscode/bancobrasil/locadora/service/VeiculoOrigemDadosAPI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/letscode/bancobrasil/locadora/service/VeiculoOrigemDadosArquivoService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/letscode/bancobrasil/locadora/service/VeiculoOrigemDadosBancoService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/letscode/bancobrasil/locadora/service/VeiculoOrigemDadosMemoriaService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/letscode/bancobrasil/locadora/service/VeiculoService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/letscode/bancobrasil/locadora/main/Aplicacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/letscode/bancobrasil/locadora/main/Aplicacao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/letscode/bancobrasil/locadora/model/PessoaFisica.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/letscode/bancobrasil/locadora/model/PessoaFisica.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/letscode/bancobrasil/locadora/model/Veiculo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/letscode/bancobrasil/locadora/model/Veiculo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/letscode/bancobrasil/locadora/service/LocacaoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/letscode/bancobrasil/locadora/service/LocacaoService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +34,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$PROJECT_DIR$/../../../../../../../Program Files/Java/jdk-11.0.12/lib/src.zip!/java.base/java/lang/Exception.java" root0="SKIP_INSPECTION" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -40,26 +55,13 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "project.structure.last.edited": "Modules",
+    "project.structure.last.edited": "SDKs",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.Aplicacao">
-    <configuration name="Aplicacao" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="br.letscode.bancobrasil.locadora.main.Aplicacao" />
-      <module name="locadora_veiculos" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="br.letscode.bancobrasil.locadora.main.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.br.letscode.bancobrasil.locadora.main.Aplicacao">
     <configuration name="TesteCast" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="br.letscode.bancobrasil.locadora.main.TesteCast" />
       <module name="locadora_veiculos" />
@@ -73,9 +75,27 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="br.letscode.bancobrasil.locadora.main.Aplicacao" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="br.letscode.bancobrasil.locadora.main.Aplicacao" />
+      <module name="locadora_veiculos" />
+      <option name="PROGRAM_PARAMETERS" value="EM_MEMORIA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.letscode.bancobrasil.locadora.main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.br.letscode.bancobrasil.locadora.main.Aplicacao" />
+      <item itemvalue="Application.TesteCast" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Aplicacao" />
+        <item itemvalue="Application.br.letscode.bancobrasil.locadora.main.Aplicacao" />
         <item itemvalue="Application.TesteCast" />
       </list>
     </recent_temporary>
@@ -91,7 +111,7 @@
       <workItem from="1654721048256" duration="2921000" />
       <workItem from="1654883686861" duration="5889000" />
       <workItem from="1654889699883" duration="599000" />
-      <workItem from="1654890337533" duration="4650000" />
+      <workItem from="1654890337533" duration="22112000" />
     </task>
     <task id="LOCAL-00001" summary="primeiro commit - Locadora de Veiculos">
       <created>1654894510094</created>
@@ -100,7 +120,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654894510095</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="primeiro commit - Locadora de Veiculos">
+      <created>1654895073688</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1654895073688</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -130,19 +157,9 @@
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/br/letscode/bancobrasil/locadora/service/LocacaoService.java</url>
-          <line>20</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/br/letscode/bancobrasil/locadora/service/LocacaoService.java</url>
-          <line>15</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/br/letscode/bancobrasil/locadora/main/Aplicacao.java</url>
-          <line>32</line>
-          <option name="timeStamp" value="4" />
+          <line>65</line>
+          <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
