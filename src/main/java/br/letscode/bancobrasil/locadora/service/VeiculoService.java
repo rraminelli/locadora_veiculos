@@ -14,6 +14,8 @@ public interface VeiculoService {
 
     String TIPO_ORDENACAO_PRECO_ASC = "PRECO_ASC";
     String TIPO_ORDENACAO_PRECO_DESC = "PRECO_DESC";
+    String TIPO_ORDENACAO_ANO_ASC = "ANO_ASC";
+    String TIPO_ORDENACAO_ANO_DESC = "ANO_DESC";
 
     List<Veiculo> recuperarListaVeiculos();
 
@@ -28,6 +30,10 @@ public interface VeiculoService {
                         return veiculo1.getPrecoLocacao().compareTo(veiculo2.getPrecoLocacao());
                     } else if (TIPO_ORDENACAO_PRECO_DESC.equals(tipoOrdenacao)) {
                         return veiculo2.getPrecoLocacao().compareTo(veiculo1.getPrecoLocacao());
+                    } else if (TIPO_ORDENACAO_ANO_ASC.equals(tipoOrdenacao)) {
+                        return Integer.valueOf(veiculo1.getAnoFabricacao()).compareTo(veiculo2.getAnoFabricacao());
+                    } else if (TIPO_ORDENACAO_ANO_DESC.equals(tipoOrdenacao)) {
+                        return Integer.valueOf(veiculo2.getAnoFabricacao()).compareTo(veiculo1.getAnoFabricacao());
                     } else {
                         return 0;
                     }

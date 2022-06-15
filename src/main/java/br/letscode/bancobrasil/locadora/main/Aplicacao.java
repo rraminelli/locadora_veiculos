@@ -2,6 +2,7 @@ package br.letscode.bancobrasil.locadora.main;
 
 import br.letscode.bancobrasil.locadora.exceptions.ClienteNaoInformadoException;
 import br.letscode.bancobrasil.locadora.exceptions.OrigemDadosVeiculoException;
+import br.letscode.bancobrasil.locadora.exceptions.VeiculoNaoEncontradoException;
 import br.letscode.bancobrasil.locadora.factory.VeiculoServiceFactory;
 import br.letscode.bancobrasil.locadora.model.*;
 import br.letscode.bancobrasil.locadora.service.LocacaoService;
@@ -10,40 +11,39 @@ import br.letscode.bancobrasil.locadora.service.VeiculoService;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.sql.Connection;
-import java.util.Collections;
-import java.util.List;
-import java.util.Properties;
+import java.time.LocalDateTime;
+import java.util.*;
 
 public class Aplicacao {
 
-    public static void main(String[] args) throws Exception {
+    private static final Scanner scanner = new Scanner(System.in);
+    private static VeiculoService veiculoService;
 
-        final String origemDados = getOrigemDados(args);
+    public static void main(String[] args) {
 
-        //Recuperar a lista de veiculos
-        final VeiculoService veiculoService = VeiculoServiceFactory.getInstance().getVeiculoService(origemDados);
-        final List<Veiculo> listaVeiculos =  veiculoService.recuperarListaVeiculos();
+        System.out.println(
+                "==============================\n" +
+                "======== Bem-vindo \u26D0 ========\n" +
+                "==============================");
 
-        //Collections.sort(listaVeiculos, veiculoService.getComparator(VeiculoService.TIPO_ORDENACAO_PRECO_DESC));
-        Collections.sort(listaVeiculos, veiculoService.getComparator(VeiculoService.TIPO_ORDENACAO_PRECO_ASC));
+        boolean executar;
+        do {
+            try {
+                iniciarPrograma(args);
+                executar = false;
+            } catch (VeiculoNaoEncontradoException e) {
+                System.err.println(e.getMessage());
+                executar = true;
+            }
+        } while (executar);
 
-        for (Veiculo veiculo : listaVeiculos) {
-            System.out.println("======");
-            System.out.println("Tipo: " + veiculo.getClass().getName());
-            System.out.println("Veiculo: " + veiculo.getMarca() + " - " + veiculo.getModelo());
-            System.out.println("Preço: " + veiculo.getPrecoLocacao());
-            System.out.println("======");
-        }
+    }
 
+    private static void iniciarPrograma(String... args) throws VeiculoNaoEncontradoException {
 
+        final List<Veiculo> listaVeiculos = recuperarListaVeiculos(args);
 
-
-
-
-
-
-
+        final Veiculo veiculoEscolhido = listarVeiculosSelecionar(listaVeiculos);
 
 
         Endereco enderecoCliente = new Endereco();
@@ -60,25 +60,34 @@ public class Aplicacao {
         cliente.setPessoa(pessoa);
 
         try {
+
+            LocalDateTime inicio = LocalDateTime.now();
+            LocalDateTime fim =
+                    LocalDateTime.of(2022, 6, 20, 10, 0);
+
             Locacao locacao = LocacaoService
                     .getInstance()
                     .addCliente(cliente)
                     .addCartaoCredito(new CartaoCredito())
-                    //.addVeiculo(gol)
+                    .addVeiculo(veiculoEscolhido)
+                    .addPeriodoLocacao(inicio, fim)
                     .build();
+
+            System.out.println("Preco total: R$ " + locacao.calcularValorTotalLocacao());
+
         } catch (ClienteNaoInformadoException e) {
             System.out.println(e.getMessage());
             System.out.println("Cliente nao informado. Entre com os dados do cliente.");
         } catch (Exception e) {
             System.out.println(e.getMessage());
-            throw new Exception(e);
+            //throw new Exception(e);
         } finally {
             System.out.println("Executando finally...");
         }
 
     }
 
-    static String getOrigemDados(final String[] args) {
+    private static String getOrigemDados(final String[] args) {
 
         String origemDados;
 
@@ -117,6 +126,43 @@ public class Aplicacao {
 
         return origemDados;
 
+    }
+
+    private static List<Veiculo> recuperarListaVeiculos(final String... args) {
+        final String origemDados = getOrigemDados(args);
+        veiculoService = VeiculoServiceFactory.getInstance().getVeiculoService(origemDados);
+        return veiculoService.recuperarListaVeiculos();
+    }
+
+    private static Veiculo listarVeiculosSelecionar(final List<Veiculo> listaVeiculos) throws VeiculoNaoEncontradoException {
+
+        System.out.println(VeiculoService.TIPO_ORDENACAO_PRECO_ASC);
+        System.out.println(VeiculoService.TIPO_ORDENACAO_PRECO_DESC);
+        System.out.println(VeiculoService.TIPO_ORDENACAO_ANO_DESC);
+        System.out.println(VeiculoService.TIPO_ORDENACAO_ANO_DESC);
+        System.out.print("Entre com a ordenaçao dos veiculos: ");
+
+        final String tipoOrdenacao = scanner.nextLine();
+
+        Collections.sort(listaVeiculos, veiculoService.getComparator(tipoOrdenacao));
+
+        System.out.println("Veiculos disponiveis:");
+        for (Veiculo veiculo : listaVeiculos) {
+            System.out.println("======");
+            System.out.println(veiculo);
+        }
+
+        System.out.print("\nDigite a placa do veiculo para locaçao: ");
+        final String placaVeiculo = scanner.nextLine();
+
+        for (Veiculo veiculo : listaVeiculos) {
+            if (veiculo.getPlaca().equals(placaVeiculo)) {
+                System.out.println("Veiculo escolhido: " + veiculo);
+                return veiculo;
+            }
+        }
+
+        throw new VeiculoNaoEncontradoException("Veiculo nao encontrado ou nao informado.");
     }
 
 }

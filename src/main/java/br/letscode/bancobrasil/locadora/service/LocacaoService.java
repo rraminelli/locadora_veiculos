@@ -6,6 +6,7 @@ import br.letscode.bancobrasil.locadora.model.Cliente;
 import br.letscode.bancobrasil.locadora.model.Locacao;
 import br.letscode.bancobrasil.locadora.model.Veiculo;
 
+import java.time.LocalDateTime;
 import java.util.HashSet;
 
 public class LocacaoService {
@@ -32,6 +33,12 @@ public class LocacaoService {
 
     public LocacaoService addVeiculo(Veiculo veiculo) {
         locacao.setVeiculo(veiculo);
+        return this;
+    }
+
+    public LocacaoService addPeriodoLocacao(LocalDateTime inicio, LocalDateTime fim) {
+        locacao.setDataHoraLocacao(inicio);
+        locacao.setDataHoraDevolucao(fim);
         return this;
     }
 

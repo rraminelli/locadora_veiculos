@@ -5,10 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9e57e0f8-3b35-4b81-82ae-279c7dc31ab2" name="Changes" comment="arquivo properties">
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/letscode/bancobrasil/locadora/exceptions/VeiculoNaoEncontradoException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/letscode/bancobrasil/locadora/model/AcrescimoLocacao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/letscode/bancobrasil/locadora/records/ClienteRecord.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/letscode/bancobrasil/locadora/records/TesteRecord.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/letscode/bancobrasil/locadora/main/Aplicacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/letscode/bancobrasil/locadora/main/Aplicacao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/letscode/bancobrasil/locadora/model/Locacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/letscode/bancobrasil/locadora/model/Locacao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/letscode/bancobrasil/locadora/model/Onibus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/letscode/bancobrasil/locadora/model/Onibus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/letscode/bancobrasil/locadora/model/Veiculo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/letscode/bancobrasil/locadora/model/Veiculo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/letscode/bancobrasil/locadora/service/LocacaoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/letscode/bancobrasil/locadora/service/LocacaoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/letscode/bancobrasil/locadora/service/VeiculoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/letscode/bancobrasil/locadora/service/VeiculoService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +26,7 @@
       <list>
         <option value="UML Class" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -28,6 +35,8 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="jar://$PROJECT_DIR$/../../../../../../../Program Files/Java/jdk-11.0.12/lib/src.zip!/java.base/java/lang/Exception.java" root0="SKIP_INSPECTION" />
+    <setting file="jar://$PROJECT_DIR$/../../../../../../../Program Files/Java/jdk-11.0.12/lib/src.zip!/java.base/java/lang/Integer.java" root0="SKIP_INSPECTION" />
+    <setting file="jar://$PROJECT_DIR$/../../../../../../../Program Files/Java/jdk-11.0.12/lib/src.zip!/java.base/java/util/Properties.java" root0="SKIP_INSPECTION" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -46,12 +55,21 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/developer/projects/raminelli/aulas_letscode/curso_bb/projetos/locadora_veiculos",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "preferences.lookFeel"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\developer\projects\raminelli\aulas_letscode\curso_bb\projetos\locadora_veiculos" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="br.letscode.bancobrasil.locadora.exceptions" />
+    </key>
+  </component>
   <component name="RunManager" selected="Application.Aplicacao">
     <configuration name="Aplicacao" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="br.letscode.bancobrasil.locadora.main.Aplicacao" />
@@ -101,7 +119,9 @@
       <workItem from="1654721048256" duration="2921000" />
       <workItem from="1654883686861" duration="5889000" />
       <workItem from="1654889699883" duration="599000" />
-      <workItem from="1654890337533" duration="25992000" />
+      <workItem from="1654890337533" duration="26538000" />
+      <workItem from="1655193136626" duration="11954000" />
+      <workItem from="1655312378018" duration="7738000" />
     </task>
     <task id="LOCAL-00001" summary="primeiro commit - Locadora de Veiculos">
       <created>1654894510094</created>
@@ -131,7 +151,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655154128971</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="arquivo properties">
+      <created>1655157244209</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1655157244209</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -164,17 +191,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/br/letscode/bancobrasil/locadora/main/Aplicacao.java</url>
-          <line>69</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/br/letscode/bancobrasil/locadora/main/Aplicacao.java</url>
-          <line>21</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/br/letscode/bancobrasil/locadora/main/Aplicacao.java</url>
-          <line>84</line>
+          <line>93</line>
           <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>

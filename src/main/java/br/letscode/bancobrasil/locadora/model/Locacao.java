@@ -1,6 +1,8 @@
 package br.letscode.bancobrasil.locadora.model;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
 
 public class Locacao {
 
@@ -49,4 +51,30 @@ public class Locacao {
     public void setDataHoraDevolucao(LocalDateTime dataHoraDevolucao) {
         this.dataHoraDevolucao = dataHoraDevolucao;
     }
+
+    public BigDecimal calcularValorTotalLocacao() {
+
+        final BigDecimal qtdeTotalDiasLocacao =
+                new BigDecimal(ChronoUnit.DAYS.between(dataHoraLocacao, dataHoraDevolucao));
+
+        System.out.println("Qtde dias locaçao: " + qtdeTotalDiasLocacao);
+        System.out.println("Valor diario locaçao: " + veiculo.getPrecoLocacao());
+
+        final BigDecimal valorTotalLocacao = veiculo.getPrecoLocacao()
+                .multiply(qtdeTotalDiasLocacao);
+
+        System.out.println("Valor locaçao antes acrescimo: R$ " + valorTotalLocacao);
+
+        if (veiculo instanceof AcrescimoLocacao) {
+            AcrescimoLocacao acrescimoLocacao = (AcrescimoLocacao) veiculo;
+            BigDecimal acrescimo =
+                    valorTotalLocacao.multiply(
+                            acrescimoLocacao.porcentagemAcrescimo().divide(new BigDecimal(100)));
+            System.out.println("Acrescimo: R$ " + acrescimo);
+            return valorTotalLocacao.add(acrescimo);
+        }
+
+        return valorTotalLocacao;
+    }
+
 }

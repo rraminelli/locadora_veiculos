@@ -1,6 +1,8 @@
 package br.letscode.bancobrasil.locadora.model;
 
-public class Onibus extends Veiculo {
+import java.math.BigDecimal;
+
+public class Onibus extends Veiculo implements AcrescimoLocacao {
 
     public enum TipoLeito {
         SEMI_LEITO,
@@ -30,4 +32,10 @@ public class Onibus extends Veiculo {
     public void setCategoriaCNH(CategoriaCNH categoriaCNH) {
         this.categoriaCNH = categoriaCNH;
     }
+
+    @Override
+    public BigDecimal porcentagemAcrescimo() {
+        return new BigDecimal(3);
+    }
+
 }

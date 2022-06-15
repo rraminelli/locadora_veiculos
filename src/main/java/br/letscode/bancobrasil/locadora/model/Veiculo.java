@@ -1,7 +1,5 @@
 package br.letscode.bancobrasil.locadora.model;
 
-import br.letscode.bancobrasil.locadora.service.VeiculoService;
-
 import java.math.BigDecimal;
 
 public abstract class Veiculo implements Comparable {
@@ -76,4 +74,17 @@ public abstract class Veiculo implements Comparable {
         return veiculo.getPrecoLocacao().compareTo(this.getPrecoLocacao());
     }
 
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("Veiculo{");
+        sb.append("cor='").append(cor).append('\'');
+        sb.append(", placa='").append(placa).append('\'');
+        sb.append(", anoFabricacao=").append(anoFabricacao);
+        sb.append(", marca='").append(marca).append('\'');
+        sb.append(", modelo='").append(modelo).append('\'');
+        sb.append(", precoLocacao=").append(precoLocacao);
+        sb.append(", qtdePassageiros=").append(qtdePassageiros);
+        sb.append('}');
+        return sb.toString();
+    }
 }
