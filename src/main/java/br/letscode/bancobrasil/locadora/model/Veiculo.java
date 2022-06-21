@@ -2,7 +2,7 @@ package br.letscode.bancobrasil.locadora.model;
 
 import java.math.BigDecimal;
 
-public abstract class Veiculo implements Comparable {
+public abstract class Veiculo extends BaseModel implements Comparable {
 
     private String cor;
     private String placa;

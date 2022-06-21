@@ -2,7 +2,7 @@ package br.letscode.bancobrasil.locadora.model;
 
 import java.util.Set;
 
-public class Cliente {
+public class Cliente extends BaseModel {
 
     private Pessoa pessoa;
     private Set<CartaoCredito> cartaoCreditos;

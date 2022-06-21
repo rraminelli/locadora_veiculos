@@ -46,6 +46,7 @@ public class Aplicacao {
         final Veiculo veiculoEscolhido = listarVeiculosSelecionar(listaVeiculos);
 
 
+
         Endereco enderecoCliente = new Endereco();
         enderecoCliente.setTipoLogradouro(Endereco.TipoLogradouro.RUA);
         enderecoCliente.setLogradouro("Rua A, 1");

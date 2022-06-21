@@ -8,6 +8,7 @@ import br.letscode.bancobrasil.locadora.model.Veiculo;
 
 import java.time.LocalDateTime;
 import java.util.HashSet;
+import java.util.Set;
 
 public class LocacaoService {
 
@@ -49,6 +50,11 @@ public class LocacaoService {
         if (locacao.getCliente().getCartaoCreditos() == null) {
             locacao.getCliente().setCartaoCreditos(new HashSet<>());
         }
+
+       /* Cliente cliente = locacao.getCliente();
+        Set<CartaoCredito> cc = cliente.getCartaoCreditos();
+        cc.add(cartaoCredito);*/
+
         locacao.getCliente().getCartaoCreditos().add(cartaoCredito);
         return this;
     }

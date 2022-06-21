@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 
-public class Locacao {
+public class Locacao extends BaseModel {
 
     private Locadora locadora;
     private Veiculo veiculo;
