@@ -2,7 +2,10 @@ package br.letscode.bancobrasil.locadora.model;
 
 import java.util.Set;
 
-public class Cliente extends BaseModel {
+public class Cliente extends BaseModel<Long> {
+
+    @ID
+    private Long idCliente;
 
     private Pessoa pessoa;
     private Set<CartaoCredito> cartaoCreditos;
@@ -21,5 +24,13 @@ public class Cliente extends BaseModel {
 
     public void setCartaoCreditos(Set<CartaoCredito> cartaoCreditos) {
         this.cartaoCreditos = cartaoCreditos;
+    }
+
+    public Long getIdCliente() {
+        return idCliente;
+    }
+
+    public void setIdCliente(Long idCliente) {
+        this.idCliente = idCliente;
     }
 }

@@ -4,10 +4,15 @@ import br.letscode.bancobrasil.locadora.model.Cliente;
 
 import java.util.List;
 
-public class ClienteRepositoryOracle implements BaseRepository<Cliente, String> {
+public class ClienteRepositoryOracle implements BaseRepository<Cliente, Long> {
     @Override
-    public void salvar(Cliente cliente) {
+    public void persistir(Cliente cliente) {
 
+    }
+
+    @Override
+    public Long criarId() {
+        return 0L; //sequence - Oracle
     }
 
     @Override
@@ -16,7 +21,7 @@ public class ClienteRepositoryOracle implements BaseRepository<Cliente, String> 
     }
 
     @Override
-    public Cliente getById(String id) {
+    public Cliente getById(Long id) {
         return null;
     }
 

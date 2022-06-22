@@ -1,10 +1,7 @@
 package br.letscode.bancobrasil.locadora.main;
 
 import br.letscode.bancobrasil.locadora.model.*;
-import br.letscode.bancobrasil.locadora.repository.BaseRepository;
-import br.letscode.bancobrasil.locadora.repository.ClienteRepositoryMySQL;
-import br.letscode.bancobrasil.locadora.repository.ClienteRepositoryOracle;
-import br.letscode.bancobrasil.locadora.repository.LocacaoRepository;
+import br.letscode.bancobrasil.locadora.repository.*;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -14,25 +11,35 @@ public class AulaListGenerics {
 
     public static void main(String[] args) {
 
-
-
-        List<Veiculo> veiculoList = new ArrayList();
+        /*List<Veiculo> veiculoList = new ArrayList();
         veiculoList.add(new Carro());
         ordenarLista(veiculoList);
 
         List<Onibus> carros = new ArrayList<>();
         carros.add(new Onibus());
-        ordenarLista(carros);
+        ordenarLista(carros);*/
 
-        BaseRepository<Cliente, String> clienteRepository = createClienteRepository("MYSQL");
-        Cliente cliente = clienteRepository.getById("364585121323");
+        BaseRepository<Cliente, Long> clienteRepository = createClienteRepository("MYSQL");
+        Cliente cliente = new Cliente(); // clienteRepository.getById(1L);
+
+        System.out.println("antes ID: " + cliente.getIdCliente());
+        clienteRepository.salvar(cliente);
+        System.out.println("depois ID: " + cliente.getIdCliente());
+
 
         BaseRepository<Locacao, Long> locacaoRepository = new LocacaoRepository();
-        //Locacao locacao = locacaoRepository.getById(new Carro());
+        Locacao locacao = new Locacao();
+        System.out.println("locacao antes ID: " + locacao.getNumeroLocacao());
+        locacaoRepository.salvar(locacao);
+        System.out.println("locacao depois ID: " + locacao.getNumeroLocacao());
+
+        VeiculoRepository veiculoRepository = new VeiculoRepository();
+        veiculoRepository.persistir(new Carro());
+        veiculoRepository.getById("AAA2563");
 
     }
 
-    private static BaseRepository<Cliente, String> createClienteRepository(String tipoBancoDados) {
+    private static BaseRepository<Cliente, Long> createClienteRepository(String tipoBancoDados) {
         if ("ORACLE".equals(tipoBancoDados)) {
             return new ClienteRepositoryOracle();
         } else if ("MYSQL".equals(tipoBancoDados)) {

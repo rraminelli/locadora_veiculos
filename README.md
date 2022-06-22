@@ -33,3 +33,11 @@ Lista de veiculos para locaçao:
 
 - Para a locaçao de onibus, prever um acrescimo de 3% no valor final da locaçao.
 
+## Passo 4
+
+- Criar classes para armazenamento dos dados. Prever a possibilidade de cada filial da locadora pode possuir um tipo diferente de armazenamento (Banco Dados MySQL/Oracle, Arquivo).
+
+## Passo 5
+
+- A locadora de veiculos solicitou o envio de mensagens promocionais para os clientes (Email, SMS, WhatsApp).
+- Algumas mensagens poderao ser enviadas também por SMS e/ou WhatsApp, mas sempre por e-mail.

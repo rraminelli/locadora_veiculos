@@ -4,8 +4,10 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 
-public class Locacao extends BaseModel {
+public class Locacao extends BaseModel<Long> {
 
+    @ID
+    private Long numeroLocacao;
     private Locadora locadora;
     private Veiculo veiculo;
     private Cliente cliente;
@@ -50,6 +52,14 @@ public class Locacao extends BaseModel {
 
     public void setDataHoraDevolucao(LocalDateTime dataHoraDevolucao) {
         this.dataHoraDevolucao = dataHoraDevolucao;
+    }
+
+    public Long getNumeroLocacao() {
+        return numeroLocacao;
+    }
+
+    public void setNumeroLocacao(Long numeroLocacao) {
+        this.numeroLocacao = numeroLocacao;
     }
 
     public BigDecimal calcularValorTotalLocacao() {

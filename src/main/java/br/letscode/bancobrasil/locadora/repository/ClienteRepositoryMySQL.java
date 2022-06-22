@@ -3,12 +3,25 @@ package br.letscode.bancobrasil.locadora.repository;
 import br.letscode.bancobrasil.locadora.model.Cliente;
 
 import java.util.List;
+import java.util.Random;
 
-public class ClienteRepositoryMySQL implements BaseRepository<Cliente, String> {
+public class ClienteRepositoryMySQL implements BaseRepository<Cliente, Long> {
 
     @Override
-    public void salvar(Cliente cliente) {
+    public void salvar(Cliente entity) {
+        BaseRepository.super.salvar(entity);
+        System.out.println();
+    }
 
+    @Override
+    public void persistir(Cliente cliente) {
+        //Salvar cliente - MySQL
+
+    }
+
+    @Override
+    public Long criarId() {
+        return new Random().nextLong(); //MySQL
     }
 
     @Override
@@ -17,7 +30,7 @@ public class ClienteRepositoryMySQL implements BaseRepository<Cliente, String> {
     }
 
     @Override
-    public Cliente getById(String id) {
+    public Cliente getById(Long id) {
         return null;
     }
 
