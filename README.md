@@ -39,5 +39,10 @@ Lista de veiculos para locaçao:
 
 ## Passo 5
 
-- A locadora de veiculos solicitou o envio de mensagens promocionais para os clientes (Email, SMS, WhatsApp).
+- A locadora de veiculos solicitou o envio de mensagens promocionais para os clientes (Email, SMS, WhatsApp). 
 - Algumas mensagens poderao ser enviadas também por SMS e/ou WhatsApp, mas sempre por e-mail.
+- As mensagens podem ser gravadas ou nao 
+
+## Passo 6
+
+- No momento da locaçao de onibus, verificar se o cliente possui a categoria correta da CNH. 

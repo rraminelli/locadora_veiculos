@@ -1,6 +1,6 @@
 package br.letscode.bancobrasil.locadora.model;
 
-public class Carro extends Veiculo {
+public final class Carro extends Veiculo {
 
     private int qtdePortas;
 

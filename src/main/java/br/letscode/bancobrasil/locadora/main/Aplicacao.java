@@ -1,11 +1,11 @@
 package br.letscode.bancobrasil.locadora.main;
 
+import br.letscode.bancobrasil.locadora.builder.LocacaoBuilder;
 import br.letscode.bancobrasil.locadora.exceptions.ClienteNaoInformadoException;
 import br.letscode.bancobrasil.locadora.exceptions.OrigemDadosVeiculoException;
 import br.letscode.bancobrasil.locadora.exceptions.VeiculoNaoEncontradoException;
 import br.letscode.bancobrasil.locadora.factory.VeiculoServiceFactory;
 import br.letscode.bancobrasil.locadora.model.*;
-import br.letscode.bancobrasil.locadora.service.LocacaoService;
 import br.letscode.bancobrasil.locadora.service.VeiculoService;
 
 import java.io.FileInputStream;
@@ -66,8 +66,7 @@ public class Aplicacao {
             LocalDateTime fim =
                     LocalDateTime.of(2022, 6, 20, 10, 0);
 
-            Locacao locacao = LocacaoService
-                    .getInstance()
+            Locacao locacao = new LocacaoBuilder()
                     .addCliente(cliente)
                     .addCartaoCredito(new CartaoCredito())
                     .addVeiculo(veiculoEscolhido)
