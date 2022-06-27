@@ -1,9 +1,8 @@
 package br.letscode.bancobrasil.locadora.decorator;
 
 import br.letscode.bancobrasil.locadora.model.Carro;
-import br.letscode.bancobrasil.locadora.model.Veiculo;
 
-public class testeDecorator {
+public class TesteDecorator {
 
     public static void main(String[] args) {
 
