@@ -1,5 +1,6 @@
 package br.letscode.bancobrasil.locadora.builder;
 
+import br.letscode.bancobrasil.locadora.domain.model.*;
 import br.letscode.bancobrasil.locadora.exceptions.ClienteNaoInformadoException;
 import br.letscode.bancobrasil.locadora.model.*;
 
@@ -47,20 +48,8 @@ public class LocacaoBuilder {
 
     public Locacao build() {
 
-        if (veiculo == null) {
-            new RuntimeException("Veiculo nao informado");
-        }
-
-        if (cliente == null) {
-            new RuntimeException("Cliente nao informado");
-        }
-
-        if (inicio == null || fim == null) {
-            new RuntimeException("Periodo de locacao nao informado");
-        }
-
         final Locacao locacao = new Locacao();
-        locacao.setDataHoraDevolucao(inicio);
+        locacao.setDataHoraLocacao(inicio);
         locacao.setDataHoraDevolucao(fim);
         locacao.setVeiculo(veiculo);
         locacao.setCliente(cliente);

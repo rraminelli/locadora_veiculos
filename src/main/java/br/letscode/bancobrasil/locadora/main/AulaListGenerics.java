@@ -1,10 +1,13 @@
 package br.letscode.bancobrasil.locadora.main;
 
+import br.letscode.bancobrasil.locadora.domain.model.Carro;
+import br.letscode.bancobrasil.locadora.domain.model.Cliente;
+import br.letscode.bancobrasil.locadora.domain.model.Locacao;
+import br.letscode.bancobrasil.locadora.domain.model.Veiculo;
+import br.letscode.bancobrasil.locadora.domain.repository.*;
 import br.letscode.bancobrasil.locadora.model.*;
 import br.letscode.bancobrasil.locadora.repository.*;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 public class AulaListGenerics {

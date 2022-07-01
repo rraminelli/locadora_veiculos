@@ -1,7 +1,7 @@
 package br.letscode.bancobrasil.locadora.main;
 
-import br.letscode.bancobrasil.locadora.model.Carro;
-import br.letscode.bancobrasil.locadora.model.Veiculo;
+import br.letscode.bancobrasil.locadora.domain.model.Carro;
+import br.letscode.bancobrasil.locadora.domain.model.Veiculo;
 
 import java.util.*;
 

@@ -1,8 +1,8 @@
 package br.letscode.bancobrasil.locadora.main;
 
 import br.letscode.bancobrasil.locadora.message.*;
-import br.letscode.bancobrasil.locadora.model.Cliente;
-import br.letscode.bancobrasil.locadora.model.Mensagem;
+import br.letscode.bancobrasil.locadora.domain.model.Cliente;
+import br.letscode.bancobrasil.locadora.domain.model.Mensagem;
 
 import java.util.ArrayList;
 import java.util.List;

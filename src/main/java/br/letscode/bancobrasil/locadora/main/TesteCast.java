@@ -1,5 +1,6 @@
 package br.letscode.bancobrasil.locadora.main;
 
+import br.letscode.bancobrasil.locadora.domain.model.*;
 import br.letscode.bancobrasil.locadora.model.*;
 
 public class TesteCast {

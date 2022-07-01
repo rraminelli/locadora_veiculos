@@ -1,6 +1,6 @@
 package br.letscode.bancobrasil.locadora.message;
 
-import br.letscode.bancobrasil.locadora.model.Mensagem;
+import br.letscode.bancobrasil.locadora.domain.model.Mensagem;
 
 public class SendMessagePersistir extends SendMessage {
 

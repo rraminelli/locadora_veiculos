@@ -1,12 +1,14 @@
 package br.letscode.bancobrasil.locadora.main;
 
 import br.letscode.bancobrasil.locadora.builder.LocacaoBuilder;
+import br.letscode.bancobrasil.locadora.domain.model.*;
+import br.letscode.bancobrasil.locadora.domain.service.locacao.*;
 import br.letscode.bancobrasil.locadora.exceptions.ClienteNaoInformadoException;
 import br.letscode.bancobrasil.locadora.exceptions.OrigemDadosVeiculoException;
 import br.letscode.bancobrasil.locadora.exceptions.VeiculoNaoEncontradoException;
 import br.letscode.bancobrasil.locadora.factory.VeiculoServiceFactory;
 import br.letscode.bancobrasil.locadora.model.*;
-import br.letscode.bancobrasil.locadora.service.VeiculoService;
+import br.letscode.bancobrasil.locadora.domain.service.VeiculoService;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -56,6 +58,8 @@ public class Aplicacao {
         pessoa.setNome("Pedro");
         pessoa.setEndereco(enderecoCliente);
         pessoa.setCpf("13234545");
+        pessoa.setEmail("email@email.com");
+        pessoa.setCelular("123456789");
 
         Cliente cliente = new Cliente();
         cliente.setPessoa(pessoa);
@@ -63,8 +67,7 @@ public class Aplicacao {
         try {
 
             LocalDateTime inicio = LocalDateTime.now();
-            LocalDateTime fim =
-                    LocalDateTime.of(2022, 6, 20, 10, 0);
+            LocalDateTime fim = LocalDateTime.of(2022, 6, 30, 10, 0);
 
             Locacao locacao = new LocacaoBuilder()
                     .addCliente(cliente)
@@ -73,7 +76,21 @@ public class Aplicacao {
                     .addPeriodoLocacao(inicio, fim)
                     .build();
 
-            System.out.println("Preco total: R$ " + locacao.calcularValorTotalLocacao());
+            List<ValidadorLocacao> validacoes = List.of(
+                    new ValidadorLocacaoCliente(),
+                    new ValidadorLocacaoPeriodo(),
+                    new ValidadorLocacaoVeiculo()
+            );
+
+            RealizarLocacaoService realizarLocacaoService = new RealizarLocacaoService(validacoes);
+            realizarLocacaoService.realizarLocacao(locacao);
+
+
+
+
+
+            //LocacaoService locacaoService = new LocacaoService();
+            //System.out.println("Preco total: R$ " + locacaoService.calcularValorTotalLocacao(locacao));
 
         } catch (ClienteNaoInformadoException e) {
             System.out.println(e.getMessage());

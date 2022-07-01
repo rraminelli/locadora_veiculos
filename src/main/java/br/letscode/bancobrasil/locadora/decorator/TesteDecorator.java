@@ -1,6 +1,6 @@
 package br.letscode.bancobrasil.locadora.decorator;
 
-import br.letscode.bancobrasil.locadora.model.Carro;
+import br.letscode.bancobrasil.locadora.domain.model.Carro;
 
 public class TesteDecorator {
 

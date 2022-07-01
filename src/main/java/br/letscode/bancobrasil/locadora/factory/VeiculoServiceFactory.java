@@ -1,5 +1,6 @@
 package br.letscode.bancobrasil.locadora.factory;
 
+import br.letscode.bancobrasil.locadora.domain.service.*;
 import br.letscode.bancobrasil.locadora.service.*;
 
 /**
